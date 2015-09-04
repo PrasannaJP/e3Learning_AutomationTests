@@ -1,0 +1,384 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 2095853326,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Open default website",
+            "match": {
+              "location": "GoogleSearch.open_default_website()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 2150387508,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GoogleSearch.setUp(Scenario)"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "Check Search",
+        "description": "",
+        "id": "google-search;check-search;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1350631217,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GoogleSearch.teardown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3275430671,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I set text \u0027Selenium\u0027 at default page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Selenium",
+                  "offset": 12
+                }
+              ],
+              "location": "GoogleSearch.i_set_text_at_default_page(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3059720166,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I set text \u0027Selenium\u0027 at default page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Selenium",
+                  "offset": 12
+                }
+              ],
+              "location": "GoogleSearch.i_set_text_at_default_page(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1079282082,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I click \u0027Search2\u0027 button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Search2",
+                  "offset": 9
+                }
+              ],
+              "location": "GoogleSearch.i_click_search_button(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 673892414,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I see first link text \u0027Selenium - Web Browser Automation\u0027 at results page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Selenium - Web Browser Automation",
+                  "offset": 23
+                }
+              ],
+              "location": "GoogleSearch.i_see_first_link_text_at_results_page(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1236232284,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I click at \u00271\u0027 results link",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 12
+                }
+              ],
+              "location": "GoogleSearch.i_click_at_results_link(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 30648379640,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I see first link title \u0027Selenium - Web Browser Automation\u0027 at new tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Selenium - Web Browser Automation",
+                  "offset": 24
+                }
+              ],
+              "location": "GoogleSearch.i_see_first_link_title_at_new_tab(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 1,
+            "name": "@demo"
+          },
+          {
+            "line": 11,
+            "name": "@Check_Search"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1806984552,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Open default website",
+            "match": {
+              "location": "GoogleSearch.open_default_website()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1697793942,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GoogleSearch.setUp(Scenario)"
+            }
+          }
+        ],
+        "line": 23,
+        "name": "Check Search",
+        "description": "",
+        "id": "google-search;check-search;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 1240090758,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GoogleSearch.teardown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 2870255614,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I set text \u0027Cucumber\u0027 at default page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Cucumber",
+                  "offset": 12
+                }
+              ],
+              "location": "GoogleSearch.i_set_text_at_default_page(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2931373016,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I set text \u0027Cucumber\u0027 at default page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Cucumber",
+                  "offset": 12
+                }
+              ],
+              "location": "GoogleSearch.i_set_text_at_default_page(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1054283651,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I click \u0027Search2\u0027 button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Search2",
+                  "offset": 9
+                }
+              ],
+              "location": "GoogleSearch.i_click_search_button(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1504309127,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I see first link text \u0027Cucumber - Wikipedia, the free encyclopedia\u0027 at results page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Cucumber - Wikipedia, the free encyclopedia",
+                  "offset": 23
+                }
+              ],
+              "location": "GoogleSearch.i_see_first_link_text_at_results_page(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 803947095,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I click at \u00271\u0027 results link",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 12
+                }
+              ],
+              "location": "GoogleSearch.i_click_at_results_link(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4924275755,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I see first link title \u0027Cucumber - Wikipedia, the free encyclopedia\u0027 at new tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Cucumber - Wikipedia, the free encyclopedia",
+                  "offset": 24
+                }
+              ],
+              "location": "GoogleSearch.i_see_first_link_title_at_new_tab(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 1,
+            "name": "@demo"
+          },
+          {
+            "line": 11,
+            "name": "@Check_Search"
+          }
+        ]
+      }
+    ],
+    "name": "Google Search",
+    "description": "",
+    "id": "google-search",
+    "keyword": "Feature",
+    "uri": "GoogleSearch.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@demo"
+      }
+    ]
+  }
+]

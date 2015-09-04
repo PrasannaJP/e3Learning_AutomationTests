@@ -1,0 +1,108 @@
+<project name="WebUITests" basedir="." default="runcukes">
+    <property name="repo" value="http://central.maven.org/maven2"/>
+
+    <!-- To figure out compatible combinations of versions, you should examine dependencies in the Maven POM files -->
+    <property name="cucumber-jvm.version" value="1.2.3"/>
+    <property name="cucumber-jvm-deps.version" value="1.0.5"/>
+    <property name="gherkin.version" value="2.12.2"/>
+    <property name="cucumber-html.version" value="0.2.3"/>
+    <property name="junit.version" value="4.11"/>
+	<property name="selenium.version" value="2.46.0"/>
+	<property name ="testng.version" value = "6.9.4"/>
+    <property name="jars" value="lib"/>
+
+    <target name="download">
+    	<echo message="Downloading all required jars to lib folder"/> 
+        <mkdir dir="${jars}"/>
+        <get src="${repo}/info/cukes/cucumber-core/${cucumber-jvm.version}/cucumber-core-${cucumber-jvm.version}.jar"
+             dest="${jars}/cucumber-core-${cucumber-jvm.version}.jar"/>
+        <get src="${repo}/info/cukes/cucumber-java/${cucumber-jvm.version}/cucumber-java-${cucumber-jvm.version}.jar"
+             dest="${jars}/cucumber-java-${cucumber-jvm.version}.jar"/>
+        <get src="${repo}/info/cukes/cucumber-junit/${cucumber-jvm.version}/cucumber-junit-${cucumber-jvm.version}.jar"
+             dest="${jars}/cucumber-junit-${cucumber-jvm.version}.jar"/>
+        <get src="${repo}/info/cukes/cucumber-jvm-deps/${cucumber-jvm-deps.version}/cucumber-jvm-deps-${cucumber-jvm-deps.version}.jar"
+             dest="${jars}/cucumber-jvm-deps-${cucumber-jvm-deps.version}.jar"/>
+        <get src="${repo}/info/cukes/gherkin/${gherkin.version}/gherkin-${gherkin.version}.jar"
+             dest="${jars}/gherkin-${gherkin.version}.jar"/>
+        <get src="${repo}/info/cukes/cucumber-html/${cucumber-html.version}/cucumber-html-${cucumber-html.version}.jar"
+             dest="${jars}/cucumber-html-${cucumber-html.version}.jar"/>
+    	<get src="${repo}/org/seleniumhq/selenium/selenium-server/${selenium.version}/selenium-server-${selenium.version}.jar"
+    	             dest="${jars}/selenium-server-${selenium.version}.jar"/>
+    	<get src="${repo}/org/seleniumhq/selenium/selenium-support/${selenium.version}/selenium-support-${selenium.version}.jar"
+    	    	             dest="${jars}/selenium-support-${selenium.version}.jar"/>
+    	<get src="${repo}/org/seleniumhq/selenium/selenium-java/${selenium.version}/selenium-java-${selenium.version}.jar"
+    	    	    	             dest="${jars}/selenium-java-${selenium.version}.jar"/>
+        <get src="${repo}/junit/junit/${junit.version}/junit-${junit.version}.jar"
+             dest="${jars}/junit-${junit.version}.jar"/>
+    	<get src="${repo}/org/seleniumhq/selenium/selenium-java/${selenium.version}/selenium-java-${selenium.version}.jar"
+    		    		    		             dest="${jars}/selenium-${selenium.version}.jar"/>
+    	<get src="${repo}/org/seleniumhq/selenium/selenium-support/${selenium.version}/selenium-support-${selenium.version}.jar"
+    	    		    		    		             dest="${jars}/selenium-support-${selenium.version}.jar"/>
+    	<get src="${repo}/org/testng/testng/${testng.version}/testng-${testng.version}.jar"
+    	    	    		    		    		             dest="${jars}/testng-${testng.version}.jar"/>
+    	<echo message="Downloading completed"/> 
+    </target>
+	
+	 <target name="classpath">
+	 	
+	        <path id="classpath">
+	            <fileset dir="${jars}">
+	                <include name="**/*.jar"/>
+	            </fileset>
+	        	<pathelement location="src/test/resources"/>
+	        	<pathelement location="src/test/java/com/webuitests/cuketests"/>
+	            <pathelement location="target/test-classes"/>
+	        </path>
+	    </target>
+
+	    <target name="compile-test" depends="classpath">
+	    	<mkdir dir="target/test-classes"/>
+	        <javac srcdir="src/test/java/com/webuitests/cuketests" destdir="target/test-classes" classpathref="classpath" includeantruntime="false"/>
+	    </target>
+
+
+    <target name="runcukes" depends="compile-test">
+    	<echo message="Executing Tests"/> 
+    	<java classname="cucumber.api.cli.Main" fork="true" failonerror="false" resultproperty="cucumber.exitstatus">
+            <classpath refid="classpath"/>
+            <arg value="--format"/>
+            <arg value="junit:target/cucumber-junit-report.xml"/>
+        	<arg value="--format"/>
+        	<arg value="json:target/cucumber-json-report.json"/>
+            <arg value="--format"/>
+            <arg value="pretty"/>
+            <arg value="--format"/>
+            <arg value="html:target/cucumber-html-report"/>
+            <arg value="--glue"/>
+            <arg value="com/webuitests/cuketests"/>
+            <arg value="src/test/resources/features"/>
+        </java>
+
+        <fail message="Cucumber failed">
+            <condition>
+                <not>
+                    <equals arg1="${cucumber.exitstatus}" arg2="0"/>
+                </not>
+            </condition>
+        </fail>
+    </target>
+
+	<target name = "report">
+		<mkdir dir="target/cucumber-junit-report"/>
+		<junitreport todir="target/cucumber-junit-report">
+		            <fileset dir="target">
+		                <include name="cucumber-junit-report.xml"/>
+		            </fileset>
+		            <report format="frames" todir="target/cucumber-junit-report"/>
+		        </junitreport>
+	</target>
+		
+    <target name="clean">
+        <delete dir="target"/>
+    	<delete dir="test-output"/>
+    </target>
+
+    <target name="clobber" depends="clean">
+        <delete dir="${jars}"/>
+    </target>
+</project>

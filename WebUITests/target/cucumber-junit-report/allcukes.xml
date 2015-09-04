@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="64.403123">
+<testcase classname="Google Search" name="Check Search" time="45.569809">
+<system-out><![CDATA[Given Open default website..................................................passed
+When I set text 'Selenium' at default page..................................passed
+When I set text 'Selenium' at default page..................................passed
+When I click 'Search2' button...............................................passed
+Then I see first link text 'Selenium - Web Browser Automation' at results page.passed
+When I click at '1' results link............................................passed
+Then I see first link title 'Selenium - Web Browser Automation' at new tab..passed
+]]></system-out>
+</testcase>
+<testcase classname="Google Search" name="Check Search 2" time="18.833314">
+<system-out><![CDATA[Given Open default website..................................................passed
+When I set text 'Cucumber' at default page..................................passed
+When I set text 'Cucumber' at default page..................................passed
+When I click 'Search2' button...............................................passed
+Then I see first link text 'Cucumber - Wikipedia, the free encyclopedia' at results page.passed
+When I click at '1' results link............................................passed
+Then I see first link title 'Cucumber - Wikipedia, the free encyclopedia' at new tab.passed
+]]></system-out>
+</testcase>
+</testsuite>
